@@ -13,6 +13,9 @@ function Todo(props) {
     console.log(props.title);
     SetmodelIsOpen(true);
   }
+  function closeModelHandler() {
+    SetmodelIsOpen(false);
+  }
 
   return (
     <div className="card">
@@ -23,8 +26,10 @@ function Todo(props) {
           delete
         </button>
       </div>
-      {modelIsOpen ? <Model /> : null}
-      {modelIsOpen ? <Backdrop /> : null}
+      {modelIsOpen ? (
+        <Model onCancle={closeModelHandler} onConfirm={closeModelHandler} />
+      ) : null}
+      {modelIsOpen ? <Backdrop onCancle={closeModelHandler} /> : null}
     </div>
   );
 }
