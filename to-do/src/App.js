@@ -1,14 +1,11 @@
 import "./app.css";
+import Todo from "../src/components/Todo";
 function App() {
   return (
     <div>
       <h1>Todo APP</h1>
-      <div className="card">
-        <h2>title</h2>
-        <div className="actions">
-          <button className="btn">delete</button>
-        </div>
-      </div>
+      <Todo title="first item" />
+      <Todo title="second item" />
     </div>
   );
 }
